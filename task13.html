@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Animation</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+    }
+
+    #train {
+      width: 500px;
+      height: auto;
+      position: absolute;
+      left: 0;
+      animation: trainAnimation 4s linear infinite;
+    }
+
+    .buttons {
+      margin-bottom: 20px;
+    }
+
+    button {
+      margin: 350px 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    .instructions {
+      color: darkblue;
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    @keyframes trainAnimation {
+      0% {
+        left: -200px;
+      }
+      100% {
+        left: calc(100% + 200px);
+      }
+    }
+  </style>
+</head>
+<body>
+    <h1>Task 7 JavaScript</h1>
+    <div class="instructions">Click the below buttons to handle animations</div>
+  <div class="container">
+    <img id="train" src="train.webp" alt="Train">
+  </div>
+  <div class="buttons">
+    <button id="startBtn" onclick="startAnimation()">Start</button>
+    <button id="stopBtn" onclick="stopAnimation()">Stop</button>
+  </div>
+
+  <script>
+    let trainAnimationInterval;
+
+    function startAnimation() {
+      const train = document.getElementById('train');
+      train.style.animationPlayState = 'running';
+
+      // Start the animation
+      trainAnimationInterval = setInterval(moveTrain, 200);
+    }
+
+    function stopAnimation() {
+      const train = document.getElementById('train');
+      train.style.animationPlayState = 'paused';
+
+      // Stop the animation
+      clearInterval(trainAnimationInterval);
+    }
+
+    function moveTrain() {
+      const train = document.getElementById('train');
+      const currentLeft = parseFloat(train.style.left) || -200;
+      train.style.left = (currentLeft + 10) + 'px';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-wqo+ZWhgRhCKm5Ir8evEMsG3zWn7mF7T8izJ/qkL8+TRK2AKoV7JKwM1yG0S6jGW" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-top: 100px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      width: 200px;
+      height: auto;
+    }
+    .input-group {
+      margin-bottom: 15px;
+      position: relative;
+    }
+    .input-group input {
+      width: calc(100% - 45px);
+      padding: 10px 40px 10px 35px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .input-group .fa {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ccc;
+    }
+    .input-group button {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #3897f0;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .input-group button:hover {
+      background-color: #3578e5;
+    }
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: #003569;
+      margin-bottom: 10px;
+    }
+    .signup-link {
+      text-align: center;
+      margin-top: 20px; /* Added margin between box and text */
+    }
+
+    .signup-link span {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .signup-link a {
+      color: #3897f0;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Task 6 JavaScript</h1>
+  <div class="container">
+    <div class="logo">
+      <img src="Instagram_logo.png" alt="Instagram Logo">
+    </div>
+    <div class="input-group">
+      <i class="fas fa-user"></i>
+      <input type="text" placeholder="Username">
+    </div>
+    <div class="input-group">
+      <i class="fas fa-lock"></i>
+      <input type="password" placeholder="Password">
+    </div>
+    <div class="input-group">
+      <button>Login</button>
+    </div>
+    <div class="options">
+      <label><input type="checkbox"> Remember Me</label>
+      <a href="#" style="color: #003569;">Forgot Password?</a>
+    </div>
+  </div>
+  <div class="signup-link">
+    <span>Don't have an account! <a href="#">Sign up here</a> </span>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha384-+0DcOabnTlDAcMSJ1d5Y9y/25q0yVQuwh8uUrsBmib8rmrMkZEGGXtawPz84rPP6" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

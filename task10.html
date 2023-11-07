@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Task 4 JavaScript</h1>
+
+<button type="button" onclick="displayDate()">Show Date</button>
+<div id="date_output"></div>
+
+<script>
+    function displayDate() {
+      const months = [
+        "January", "February", "March", "April",
+        "May", "June", "July", "August",
+        "September", "October", "November", "December"
+      ];
+  
+      const currentDate = new Date();
+      const day = currentDate.getDate();
+      const month = months[currentDate.getMonth()];
+      const year = currentDate.getFullYear();
+  
+      const formattedDate = `${day}/${month}/${year}`;
+      document.getElementById('date_output').innerHTML = formattedDate;
+    }
+</script>
+
+<br>
+
+<button type="button" onclick="displayTime()">Show Time</button>
+<div id="date_time_button"></div>
+
+<script>
+    function displayTime() {
+      const currentTime = new Date();
+      const formattedTime = currentTime.toLocaleTimeString();
+      document.getElementById('date_time_button').innerHTML = Date();
+    }
+</script>
+
+</body>
+</html>

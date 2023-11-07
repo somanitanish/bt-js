@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 5px;
+    }
+
+    .form-group button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Task 5 JavaScript</h1>
+
+  <h1>Contact Us</h1>
+
+  <form id="contactForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="website">Website:</label>
+      <input type="url" id="website" name="website" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // JavaScript function to handle form submission and validation
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var website = document.getElementById('website').value;
+      var message = document.getElementById('message').value;
+
+      // Check if any field is empty
+      if (name === '' || email === '' || website === '' || message === '') {
+        alert('All fields must be filled out.');
+        event.preventDefault();
+      }
+    });
+  </script>
+
+</body>
+</html>

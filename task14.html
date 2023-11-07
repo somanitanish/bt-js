@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Page</title>
+    <style>
+        .form-container {
+          background: linear-gradient(to top, pink, gold);
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          width: auto;
+        }
+      </style>
+    <script>
+        function validateForm() {
+          // First Name validation
+          var firstName = document.getElementById("firstname").value;
+          if (firstName == "") {
+            alert("Please enter First Name");
+            return false;
+          }
+  
+          // Last Name validation
+          var lastName = document.getElementById("lastname").value;
+          if (lastName == "") {
+            alert("Please enter Last Name");
+            return false;
+          }
+  
+          // Email validation (basic format)
+          var email = document.getElementById("email").value;
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            alert("Please enter a valid Email");
+            return false;
+          }
+  
+          // Password validation (minimum 8 characters)
+          var password = document.getElementById("pass").value;
+          if (password.length < 8) {
+            alert("Password must be at least 8 characters long");
+            return false;
+          }
+  
+          // Re-enter Password validation
+          var rePassword = document.getElementById("repass").value;
+          if (password !== rePassword) {
+            alert("Passwords do not match");
+            return false;
+          }
+  
+          // Age validation (numeric)
+          var age = document.getElementById("age").value;
+          if (isNaN(age) || age < 1) {
+            alert("Please enter a valid Age");
+            return false;
+          }
+  
+          // Phone validation (numeric, optional)
+          var phoneNumber = document.getElementById("phone").value;
+          if (!/^\d+$/.test(phoneNumber)) {
+            alert("Please enter a valid Phone Number");
+            return false;
+          }
+  
+          // Address validation (optional)
+          var address = document.getElementById("address").value;
+          // You can add additional validation for address if needed
+  
+          return true;
+        }
+      </script>
+  </head>
+  <body>
+    <h1>Task 8 JavaScript</h1>
+    <h2 style="color: darkblue; text-align: center;">Registration Form</h2>
+    <div align="center" class="form-container">
+    <form onsubmit="return validateForm()">
+      <table border="1">
+        <tr>
+          <td><label for="firstname">First Name:</label></td>
+          <td><input type="text" id="firstname" name="firstname" size="15" /></td>
+        </tr>
+        <tr>
+          <td><label for="lastname">Last Name:</label></td>
+          <td><input type="text" id="lastname" name="lastname" size="15" /></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input type="email" id="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td><label for="pass">Password:</label></td>
+          <td><input type="password" id="pass" name="pass" /></td>
+        </tr>
+        <tr>
+          <td><label for="repass">Re-enter Password:</label></td>
+          <td><input type="password" id="repass" name="repass" /></td>
+        </tr>
+        <tr>
+          <td><label>Gender:</label></td>
+          <td>
+            <input type="radio" name="gender" value="Male" /> Male<br /><hr />
+            <input type="radio" name="gender" value="Female" /> Female<br /> <hr />
+            <input type="radio" name="gender" value="Other" /> Other<br />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="age">Age:</label></td>
+          <td><input type="text" id="age" name="age" /></td>
+        </tr>
+        <tr>
+          <td><label>Phone Number:</label></td>
+          <td>
+            <input type="text" name="countrycode" value="+91" size="2" />
+            <input type="text" name="phone" size="10" /><br />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="address">Address:</label></td>
+          <td><textarea cols="40" rows="5" id="address" name="address"></textarea></td>
+        </tr>
+        <tr>
+          <td><label for="state">State:</label></td>
+          <td><input type="text" id="state" name="state" /></td>
+        </tr>
+        <tr>
+          <td><label for="country">Country:</label></td>
+          <td>
+            <select id="country" name="country">
+              <option>Choose your country</option>
+              <option value="India">India</option>
+              <option value="Japan">Japan</option>
+              <option value="America">America</option>
+              <option value="China">China</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Russia">Russia</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Languages Known:</label></td>
+          <td>
+            <input type="checkbox" name="languages" value="English" /> English
+            <input type="checkbox" name="languages" value="Hindi" /> Hindi
+            <input type="checkbox" name="languages" value="Kannada" /> Kannada
+            <input type="checkbox" name="languages" value="Telugu" /> Telugu<br />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="checkbox" /> Hereby I declare all the given details are true <br /> <hr />
+            <div align="right">
+                Log in to <a href="https://www.ethnus.com" target="_blank">Ethnus</a> website
+              </div>
+             <div align ="center"> <input type="submit" value="Register" /> </div>
+          </td>
+        </tr>
+      </table>
+      
+    </form>
+    
+    </div>
+  </body>
+</html>
